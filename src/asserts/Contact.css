@@ -1,0 +1,46 @@
+.Contact {
+  margin-top: 80px; /* Reduced from 80px to 40px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Changed to flex-start to avoid extra vertical space */
+  align-items: center;
+  gap: 8rem; /* Reduced gap from 8rem to 4rem */
+}
+
+.Contact-item {
+  width: 100%;
+  max-width: 600px;
+  background-color: azure;
+  padding: 20px;
+  border: 2px solid lightgrey;
+  border-radius: 3rem;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10rem;
+}
+
+.Contact-item:hover {
+  box-shadow: 0 0 20px rgb(183, 176, 166);
+}
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px; /* Adjusted padding from 40px to 30px */
+  }
+
+  .footer div {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .footer .social {
+    flex-direction: row;
+    align-items: center; /* Ensured consistent alignment */
+  }
+
+  .footer .social > div {
+    margin-right: 10px; /* Reduced margin-right for social items */
+  }
+}

@@ -1,24 +1,66 @@
-.parent{
-    height: 100vh;
+.parent {
+    min-height: 100vh;
     width: 100%;
     background-color: black;
-    align-content: center;
-}
-.child{
-    height: 60vh;
-    width:30%;
-    background-color: azure;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .parent-top {
+    color: aliceblue;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .parent-top h2 {
+    text-align: center;
+  }
+  
+  .parent-top p {
+    text-align: center;
+    color: goldenrod;
+    font-weight: 400;
+    font-size: x-large;
+  }
+  
+  .child {
+    width: 90%;
+    max-width: 400px;
+    background-color: aliceblue;
     text-align: center;
     color: black;
-    background-color: aliceblue;
     border: 2px solid antiquewhite;
-    border-radius: 20%;
+    border-radius: 20px;
     transition: 0.3s ease-in-out;
-}
-.child:hover{
-    color:black;
-    transform: scale(1.0)translateY(-5px);
+    padding: 1rem;
+    user-select: none;
+  }
+  
+  .child:hover {
+    color: black;
+    transform: scale(1.05) translateY(-5px);
     box-shadow: 0 0 29px antiquewhite;
     background-color: whitesmoke;
-}
+  }
+  
+  @media (min-width: 768px) {
+    .child {
+      width: 60%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .child {
+      width: 40%;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .child {
+      width: 30%;
+    }
+  }
+  

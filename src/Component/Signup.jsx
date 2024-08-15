@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import '../asserts/Signin.css';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Button } from '@mui/material';
+import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import { postalldata } from '../axios'; // Ensure this path is correct
+import '../asserts/Signin.css';
 
-function Signup() {
+const Signup = () => {
   const navigate = useNavigate();
-  const [userdata, setUserdata] = useState({ firstName: "", lastName: "", email: "", pass: "" });
+  const [userdata, setUserdata] = useState({ firstname: "", lastname: "", email: "", password: "", date: "" });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -15,16 +16,15 @@ function Signup() {
   };
 
   const validate = () => {
-    const { firstName, lastName, email, pass } = userdata;
+    const { firstname, lastname, email, password } = userdata;
     const emailRegex = /\S+@\S+\.\S+/;
     let isValid = true;
 
-    if (firstName.trim() === "") {
-      alert("First name is required.");
+    if (firstname.trim() === "" || firstname.length <= 3) {
+      alert("First name is required and its length must be greater than 3.");
       isValid = false;
     }
-
-    if (lastName.trim() === "") {
+    if (lastname.trim() === "") {
       alert("Last name is required.");
       isValid = false;
     }
@@ -34,81 +34,86 @@ function Signup() {
       isValid = false;
     }
 
-    if (pass.length < 6) {
+    if (password.length < 6) {
       alert("Password must be at least 6 characters long.");
       isValid = false;
     }
 
     return isValid;
   };
-
-  const handleSubmit = (event) => {
+  
+  const date = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-GB', options);
+  userdata.date=formattedDate;
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (validate()) {
-      console.log(userdata); 
-      alert("Successfully Signed up");
-      navigate('/Login');
+      try {
+       await postalldata(userdata);
+          alert("Hello!!! " + userdata.firstname + " Thanks for choosing us");
+        navigate('/UserLogin');
+      } catch (error) {
+        // alert("email already exists");  
+        console.error("There was an error signing up!", error);
+      }
     }
   };
 
+
   return (
     <div className='parent'>
+      <div className='parent-top-login'>CHESS ARCADE</div>
       <div className='child'>
         <h1>Sign Up</h1>
-        <form onSubmit={handleSubmit}>
-          <Box sx={{
+        <Box
+          sx={{
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
             '& > :not(style)': { m: 1 },
-          }}>
-            <TextField
-              helperText=""
-              id="firstName"
-              name="firstName"
-              label="First Name"
-              value={userdata.firstName}
-              onChange={handleChange}
-            />
-            <TextField
-              helperText=""
-              id="lastName"
-              name="lastName"
-              label="Last Name"
-              value={userdata.lastName}
-              onChange={handleChange}
-            />
-          </Box>
-          <Box sx={{
-            display: 'flex',
-            alignItems: 'center',
-            '& > :not(style)': { m: 1 },
-          }}>
-            <TextField
-              helperText="Enter a valid email or phone"
-              id="email"
-              name="email"
-              label="Email or Phone number"
-              value={userdata.email}
-              onChange={handleChange}
-            />
-            <TextField
-              helperText="Create a strong password"
-              id="pass"
-              name="pass"
-              label="Password"
-              type="password"
-              value={userdata.pass}
-              onChange={handleChange}
-            />
-          </Box>
-          <br />
-          <Button variant='contained' type="submit">Sign Up</Button>
-          <br />
-          <Button onClick={() => navigate('/Login')}>Already have an account?</Button>
-        </form>
+          }}
+        >
+          <TextField
+            helperText="Please enter your First Name"
+            label="First Name"
+            name='firstname'
+            onChange={handleChange}
+            value={userdata.firstName}
+            fullWidth
+          />
+          <TextField
+            helperText="Please enter your Last Name"
+            label="Last Name"
+            name='lastname'
+            onChange={handleChange}
+            value={userdata.lastName}
+            fullWidth
+          />
+          <TextField
+            helperText="Please enter your Email"
+            label='Email'
+            name='email'
+            onChange={handleChange}
+            value={userdata.email}
+            fullWidth
+          />
+          <TextField
+            helperText="Please enter your password"
+            label='Password'
+            type='password'
+            name='password'
+            onChange={handleChange}
+            value={userdata.pass}
+            fullWidth
+          />
+        </Box>
+        <Button variant="contained" onClick={handleSubmit}>Sign Up</Button>
+        <br />
+        <Button onClick={() => navigate('/UserLogin')}>Login</Button>
       </div>
     </div>
   );
-}
+};
 
 export default Signup;

@@ -1,10 +1,17 @@
-import Login from '../src/Component/Login'
+import { CourseProvider } from './Component/Couses/CourseContext';
+import { AuthProvider } from './Component/Login/AuthContext';
+import { LoginProvider } from './Component/Login/LoginContext';
 import Routing from './Component/Routing';
-import Signup from './Component/Signup';
 function App() {
   return (
     <div className="App">
-      <Routing/>
+      <AuthProvider>
+      <LoginProvider>
+        <CourseProvider>
+            <Routing/>
+      </CourseProvider>
+      </LoginProvider>
+      </AuthProvider>
     </div>
   );
 }

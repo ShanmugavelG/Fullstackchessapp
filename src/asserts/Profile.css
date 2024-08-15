@@ -1,0 +1,177 @@
+/* Profile Page Styles */
+.Profile {
+  min-height: 100vh;
+  /* background-image: url('../images/Chess_Proflie.jpg');
+  background-size: cover; 
+  background-position: center;  */
+  background: linear-gradient(135deg, #FFFFFF 0%, #E0F7FA 50%, #B2EBF2 100%);
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(248, 248, 248, 0.8); /* Set a translucent background */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  user-select: none;
+  flex-wrap: wrap;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 60%;
+  margin-right: 20px;
+  user-select: none;
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.profile-info p {
+  margin: 10px 0;
+  color: #030101;
+}
+
+.profile-details, .profile-activity {
+  margin-top: 20px;
+}
+
+.profile-details h2, .profile-activity h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.profile-details p, .profile-activity p {
+  margin: 5px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 15px;
+    margin-top: 50px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-details h2, .profile-activity h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-info h1 {
+    font-size: 1.25rem;
+  }
+
+  .profile-details h2, .profile-activity h2 {
+    font-size: 1rem;
+  }
+}
+.enroll-course-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows items to wrap to the next line if they overflow */
+  gap: 3rem; /* Space between items */
+}
+
+.enroll-course-item {
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  width: 200px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between child elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.enroll-course-item:hover {
+  transform: scale(1.02); /* Slightly enlarges the item on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhances shadow on hover */
+}
+
+.enroll-course-image {
+  flex-shrink: 0;
+}
+
+.enroll-course-img {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.enroll-course-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enroll-course-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  color: #333; /* Darker color for better readability */
+}
+
+.enroll-course-description {
+  font-size: 14px;
+  margin: 0 0 5px 0;
+  color: #555; /* Slightly lighter color for description */
+}
+
+.enroll-course-id {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  color: #666;
+}
+
+.enroll-unenroll-button {
+  margin-top: 10px;
+  text-transform: none;
+  padding: 8px 16px;
+}

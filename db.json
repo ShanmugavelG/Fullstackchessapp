@@ -1,0 +1,60 @@
+{
+  "LogInData": [
+    {
+      "firstName": "SHANMUGAVEL",
+      "lastName": "G",
+      "email": "727722eucs159@skcet.ac.in",
+      "pass": "Sha@123",
+      "date": "30 July 2024",
+      "id": 1
+    },
+    {
+      "firstName": "SHANMUGAVELGGG",
+      "lastName": "G",
+      "email": "727722eucs199@skcet.ac.in",
+      "pass": "Sha@123",
+      "date": "30 July 2024",
+      "id": 2
+    }
+  ],
+  "AdminData": [
+    {
+      "Name": "Shanmugavel",
+      "bio": "Still Seeking victory",
+      "Location": "Coimbatore",
+      "Date": "03/01/2024",
+      "email": "727722eucs159@skcet.ac.in",
+      "pass": "sha@123"
+    }
+  ],
+  "Courses": [
+    {
+      "title": "Chess Advanced",
+      "description": "Advanced Chess course for passionate students",
+      "Content": "Coaching for students from beginner to advanced",
+      "img": "/static/media/Chess_Proflie.b1d19ff8a646face5e03.jpg",
+      "id": 3
+    },
+    {
+      "title": "Chess Advanced",
+      "description": "Advanced Chess course for passionate students",
+      "Content": "Coaching for students from beginner to advanced",
+      "img": "/static/media/Icon2.3303d1a7cbf4c91e0867.jpg",
+      "id": 4
+    },
+    {
+      "title": "Road to Grandmaster",
+      "description": "Trainings provided by Previous Grandmasters to make one",
+      "Content": "Provides Videos and Online classes for the development",
+      "img": "/static/media/Icon4.e8d6892f94e5034f87c5.jpg",
+      "id": 5
+    },
+    {
+      "title": "Beginner level",
+      "description": "for beginners",
+      "Content": "hgudy",
+      "img": "/static/media/Icon4.e8d6892f94e5034f87c5.jpg",
+      "id": 6
+    }
+  ]
+}

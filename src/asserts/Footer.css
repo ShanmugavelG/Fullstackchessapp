@@ -1,0 +1,42 @@
+.footer {
+    background-color: #0c1b2a;
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .footer .MuiTypography-root {
+    margin-bottom: 10px;
+  }
+  
+  .subscribe-button {
+    margin-top: 10px;
+    background-color: #f26c21;
+    color: white;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+  }
+  .social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: inherit; /* Ensures icons inherit the current text color */
+    margin: 0 10px; /* Adds spacing between icons */
+    font-size: 35px; /* Ensures icons have a consistent size */
+    transition: 0.3s ease-in-out; /* Adds a transition effect */
+  }
+  
+  .social-icons a:hover {
+    box-shadow: 0 0 10px rgb(231, 231, 226); /* Adds a shadow effect on hover */
+  }
+  
